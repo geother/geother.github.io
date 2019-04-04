@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://geother.github.io">
-  <title>SA初步总结 | Geother</title>
+  <title>分层图+最短路 | Geother</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实际是看脸算法">
+  <meta name="description" content="个人感觉是DP想法的延伸 这种算法还是挺裸的">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SA初步总结">
-<meta property="og:url" content="https://geother.github.io/2019/04/01/P1337/index.html">
+<meta property="og:title" content="分层图+最短路">
+<meta property="og:url" content="https://geother.github.io/2019/04/05/P4568/index.html">
 <meta property="og:site_name" content="Geother">
-<meta property="og:description" content="实际是看脸算法">
+<meta property="og:description" content="个人感觉是DP想法的延伸 这种算法还是挺裸的">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn.luogu.org/upload/pic/148.png">
-<meta property="og:updated_time" content="2019-04-03T16:49:03.538Z">
+<meta property="og:updated_time" content="2019-04-04T16:41:50.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SA初步总结">
-<meta name="twitter:description" content="实际是看脸算法">
-<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/148.png">
+<meta name="twitter:title" content="分层图+最短路">
+<meta name="twitter:description" content="个人感觉是DP想法的延伸 这种算法还是挺裸的">
   
     <link rel="alternative" href="/atom.xml" title="Geother" type="application/atom+xml">
   
@@ -151,61 +149,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-P1337" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-P4568" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SA初步总结
+      分层图+最短路
     </h1>
   
 
         
-        <a href="/2019/04/01/P1337/" class="archive-article-date">
-  	<time datetime="2019-03-31T16:30:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+        <a href="/2019/04/05/P4568/" class="archive-article-date">
+  	<time datetime="2019-04-04T16:36:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>实际是看脸算法</p>
-</blockquote>
+        <p>个人感觉是DP想法的延伸</p>
+<p>这种算法还是挺裸的</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=509106775&auto=0&height=66"></iframe>
+
 <a id="more"></a>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如图：有n个重物，每个重物系在一条足够长的绳子上。每条绳子自上而下穿过桌面上的洞，然后系在一起。图中X处就是公共的绳结。假设绳子是完全弹性的（不会造成能量损失），桌子足够高（因而重物不会垂到地上），且忽略所有的摩擦。</p>
-<p>问绳结X最终平衡于何处。</p>
-<p>注意：桌面上的洞都比绳结X小得多，所以即使某个重物特别重，绳结X也不可能穿过桌面上的洞掉下来，最多是卡在某个洞口处。</p>
-<p><img src="https://cdn.luogu.org/upload/pic/148.png" alt="img"></p>
-<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><p>输入格式：</p>
-<p>文件的第一行为一个正整数n（1≤n≤1000），表示重物和洞的数目。接下来的n行，每行是3个整数：Xi.Yi.Wi，分别表示第i个洞的坐标以及第 i个重物的重量。(-10000≤x,y≤10000, 0&lt;w≤1000 )</p>
-<p>输出格式：</p>
-<p>你的程序必须输出两个浮点数（保留小数点后三位），分别表示处于最终平衡状态时绳结X的横坐标和纵坐标。两个数以一个空格隔开。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>输入样例#1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">0 0 1</span><br><span class="line">0 2 1</span><br><span class="line">1 1 1</span><br></pre></td></tr></table></figure>
-<p>输出样例#1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.577 1.000</span><br></pre></td></tr></table></figure>
-<h1 id="自闭过程"><a href="#自闭过程" class="headerlink" title="自闭过程"></a>自闭过程</h1><p>我做此题时遇到的主要毒瘤点</p>
-<ol>
-<li>二维随机点</li>
-<li>点的坐标是实数</li>
-<li>物理上（我真不知道平衡意味着重力势能最小QAQ）</li>
-</ol>
-<p>多打一个 “ * “ debug到麻（2.5h）</p>
-<p>这一定是我最后一次手残！！！</p>
-<p>Ps.  人品爆炸生日做  srand()  一发过</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">db ansx,ansy;</span><br><span class="line">db ipx[N],ipy[N],w[N];</span><br><span class="line">db sh=<span class="number">999999999.0</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">db <span class="title">cal</span><span class="params">(db a,db b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	db ener=<span class="number">0.00</span>;</span><br><span class="line">	db dertx,derty;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"!!"&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dertx=a-ipx[i];</span><br><span class="line">		derty=b-ipy[i];</span><br><span class="line">		ener+=((db)<span class="built_in">sqrt</span>(dertx*dertx+derty*derty))*(db)w[i];</span><br><span class="line">		<span class="comment">//printf("%.3f %.3f %.3f\n",dertx,derty,((db)sqrt(dertx*dertx*+derty*derty))*(db)w[i]);</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ener;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SA</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(db T=<span class="number">2003.0</span>; T&gt;<span class="number">1e-14</span>;T*=<span class="number">0.999</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//cout&lt;&lt;"AC!"&lt;&lt;endl;</span></span><br><span class="line">		db nowx,nowy;</span><br><span class="line">		nowx=ansx+(rand()*<span class="number">2</span>-RAND_MAX)*T;</span><br><span class="line">		nowy=ansy+(rand()*<span class="number">2</span>-RAND_MAX)*T;</span><br><span class="line">		db qaq=cal(nowx,nowy);</span><br><span class="line">		<span class="comment">//printf("%.3f %.3f %.3f\n",nowx,nowy,qaq);</span></span><br><span class="line">		<span class="keyword">if</span>(qaq&lt;=sh)</span><br><span class="line">		&#123;</span><br><span class="line">			sh=qaq;</span><br><span class="line">			ansx=nowx;</span><br><span class="line">			ansy=nowy;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">exp</span>((sh-qaq)/T)*RAND_MAX&gt;rand())</span><br><span class="line">		&#123;</span><br><span class="line">			ansx=nowx;</span><br><span class="line">			ansy=nowy;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//printf("%.3f\n",qaq);</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	srand(<span class="number">20030427</span>);</span><br><span class="line">	<span class="comment">//freopen("in.in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen("out.out","w",stdout);</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ipx[i];</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ipy[i];</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;w[i];</span><br><span class="line">		ansx+=ipx[i];</span><br><span class="line">		ansy+=ipy[i];</span><br><span class="line">	&#125;</span><br><span class="line">	ansx=ansx/(db)n;</span><br><span class="line">	ansy=ansy/(db)n;</span><br><span class="line">	sh=cal(ansx,ansy);</span><br><span class="line">	SA();</span><br><span class="line">	SA();</span><br><span class="line">	SA();</span><br><span class="line">	<span class="comment">//printf("%.3f\n",cal(0.000,1.00));</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.3f %.3f"</span>,ansx,ansy);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="SA小总结"><a href="#SA小总结" class="headerlink" title="SA小总结"></a>SA小总结</h1><ol>
-<li><p>EXP参数必须是负数</p>
-</li>
-<li><p>以一定概率接受差解</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">exp</span>(dt/t)*RAND_MAX&gt;rand()) &#123;唔呣;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>别用clock() ||  time();</p>
-</li>
-</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">Alice和Bob现在要乘飞机旅行，他们选择了一家相对便宜的航空公司。该航空公司一共在nn个城市设有业务，设这些城市分别标记为00到n-1n−1，一共有mm种航线，每种航线连接两个城市，并且航线有一定的价格。</span><br><span class="line"></span><br><span class="line">Alice和Bob现在要从一个城市沿着航线到达另一个城市，途中可以进行转机。航空公司对他们这次旅行也推出优惠，他们可以免费在最多kk种航线上搭乘飞机。那么Alice和Bob这次出行最少花费多少？</span><br><span class="line"></span><br><span class="line">输入输出格式</span><br><span class="line">输入格式：</span><br><span class="line">数据的第一行有三个整数，n,m,kn,m,k，分别表示城市数，航线数和免费乘坐次数。</span><br><span class="line">第二行有两个整数，s,ts,t，分别表示他们出行的起点城市编号和终点城市编号。</span><br><span class="line">接下来有m行，每行三个整数，a,b,ca,b,c，表示存在一种航线，能从城市aa到达城市bb，或从城市bb到达城市aa，价格为cc。</span><br><span class="line"></span><br><span class="line">输出格式：</span><br><span class="line">只有一行，包含一个整数，为最少花费。</span><br><span class="line"></span><br><span class="line">输入输出样例</span><br><span class="line">输入样例#1： </span><br><span class="line">5 6 1</span><br><span class="line">0 4</span><br><span class="line">0 1 5</span><br><span class="line">1 2 5</span><br><span class="line">2 3 5</span><br><span class="line">3 4 5</span><br><span class="line">2 3 3</span><br><span class="line">0 2 100</span><br><span class="line">输出样例#1： </span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<p>直接建一个K层分层图乱跑</p>
+<p>最开始因为初始化的问题WA了好几发</p>
+<blockquote>
+<p>初始化一个都不能落</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 1000005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=INT_MAX;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">in</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))&#123;w|=ch==<span class="string">'-'</span>; ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,m,k,st,ed,head[N],cnt,dis[<span class="number">15</span>][N],vis[<span class="number">15</span>][N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span><span class="keyword">int</span> to,w,next;&#125;edge[M];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span><span class="keyword">int</span> ceng,dist,id;&#125;;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(Node A,Node B)&#123;<span class="keyword">return</span> A.dist&gt;B.dist;&#125;</span><br><span class="line">priority_queue &lt;Node&gt; Q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> A,<span class="keyword">int</span> B,<span class="keyword">int</span> C)</span></span>&#123;edge[++cnt].to=B;edge[cnt].w=C;edge[cnt].next=head[A];head[A]=cnt;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Q.push((Node)&#123;<span class="number">0</span>,<span class="number">0</span>,S&#125;);</span><br><span class="line">	<span class="keyword">while</span>(!Q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		Node now=Q.top();Q.pop();</span><br><span class="line">		<span class="keyword">if</span>(vis[now.ceng][now.id]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[now.ceng][now.id]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=head[now.id];i;i=edge[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> v=edge[i].to;</span><br><span class="line">			<span class="keyword">if</span>((!vis[now.ceng][v])&amp;&amp;dis[now.ceng][v]&gt;now.dist+edge[i].w)</span><br><span class="line">			&#123;</span><br><span class="line">				dis[now.ceng][v]=now.dist+edge[i].w;</span><br><span class="line">				Q.push((Node)&#123;now.ceng,dis[now.ceng][v],v&#125;);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>((!vis[now.ceng+<span class="number">1</span>][v])&amp;&amp;(now.ceng&lt;k)&amp;&amp;(dis[now.ceng+<span class="number">1</span>][v]&gt;now.dist))</span><br><span class="line">			&#123;</span><br><span class="line">				dis[now.ceng+<span class="number">1</span>][v]=now.dist;</span><br><span class="line">				Q.push((Node)&#123;now.ceng+<span class="number">1</span>,now.dist,v&#125;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//return;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=in(); m=in(); k=in();</span><br><span class="line">	st=in(); ed=in();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> A,B,C;</span><br><span class="line">		A=in(); B=in(); C=in();</span><br><span class="line">		add(A,B,C);</span><br><span class="line">		add(B,A,C);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)</span><br><span class="line">		dis[i][j]=INF;</span><br><span class="line">	<span class="comment">//for(int i=0;i&lt;=k;i++) dis[i][st]=0;</span></span><br><span class="line">	dis[<span class="number">0</span>][st]=<span class="number">0</span>;</span><br><span class="line">	dijkstra(st);</span><br><span class="line">	<span class="keyword">int</span> ans=INF;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=min(k,m);i++) ans=min(ans,dis[i][ed]);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;INF&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>完结撒花！</p>
 
       
 
@@ -275,7 +251,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://geother.github.io/2019/04/01/P1337/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://geother.github.io/2019/04/05/P4568/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,18 +265,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/02/DIJ/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Dijkstra+堆优化小结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/01/P1131/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">蒟蒻第一道树形DP</div>
+    <a href="/2019/04/05/SEG/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线段树初步</div>
       <i class="icon-circle-right"></i>
     </a>
   

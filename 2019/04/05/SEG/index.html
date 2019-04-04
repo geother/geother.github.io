@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://geother.github.io">
-  <title>SA初步总结 | Geother</title>
+  <title>线段树初步 | Geother</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实际是看脸算法">
+  <meta name="description" content="快省选了  垂死病中惊坐起   自己线段树模板二还没正经做过。。 吸氧分块大法好！！！   不承认在成功AC这道题之前自己一直莫得线段树灵魂">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SA初步总结">
-<meta property="og:url" content="https://geother.github.io/2019/04/01/P1337/index.html">
+<meta property="og:title" content="线段树初步">
+<meta property="og:url" content="https://geother.github.io/2019/04/05/SEG/index.html">
 <meta property="og:site_name" content="Geother">
-<meta property="og:description" content="实际是看脸算法">
+<meta property="og:description" content="快省选了  垂死病中惊坐起   自己线段树模板二还没正经做过。。 吸氧分块大法好！！！   不承认在成功AC这道题之前自己一直莫得线段树灵魂">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cdn.luogu.org/upload/pic/148.png">
-<meta property="og:updated_time" content="2019-04-03T16:49:03.538Z">
+<meta property="og:updated_time" content="2019-04-04T16:42:04.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SA初步总结">
-<meta name="twitter:description" content="实际是看脸算法">
-<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/148.png">
+<meta name="twitter:title" content="线段树初步">
+<meta name="twitter:description" content="快省选了  垂死病中惊坐起   自己线段树模板二还没正经做过。。 吸氧分块大法好！！！   不承认在成功AC这道题之前自己一直莫得线段树灵魂">
   
     <link rel="alternative" href="/atom.xml" title="Geother" type="application/atom+xml">
   
@@ -151,61 +149,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-P1337" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SEG" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SA初步总结
+      线段树初步
     </h1>
   
 
         
-        <a href="/2019/04/01/P1337/" class="archive-article-date">
-  	<time datetime="2019-03-31T16:30:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+        <a href="/2019/04/05/SEG/" class="archive-article-date">
+  	<time datetime="2019-04-04T16:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>实际是看脸算法</p>
-</blockquote>
+        <p>快省选了  垂死病中惊坐起   自己<code>线段树模板二</code>还没正经做过。。</p>
+<p><del>吸氧分块大法好！！！</del></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=2056595219&auto=0&height=66"></iframe>
+
+<p>不承认在成功AC这道题之前自己一直莫得线段树灵魂</p>
 <a id="more"></a>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如图：有n个重物，每个重物系在一条足够长的绳子上。每条绳子自上而下穿过桌面上的洞，然后系在一起。图中X处就是公共的绳结。假设绳子是完全弹性的（不会造成能量损失），桌子足够高（因而重物不会垂到地上），且忽略所有的摩擦。</p>
-<p>问绳结X最终平衡于何处。</p>
-<p>注意：桌面上的洞都比绳结X小得多，所以即使某个重物特别重，绳结X也不可能穿过桌面上的洞掉下来，最多是卡在某个洞口处。</p>
-<p><img src="https://cdn.luogu.org/upload/pic/148.png" alt="img"></p>
-<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><p>输入格式：</p>
-<p>文件的第一行为一个正整数n（1≤n≤1000），表示重物和洞的数目。接下来的n行，每行是3个整数：Xi.Yi.Wi，分别表示第i个洞的坐标以及第 i个重物的重量。(-10000≤x,y≤10000, 0&lt;w≤1000 )</p>
-<p>输出格式：</p>
-<p>你的程序必须输出两个浮点数（保留小数点后三位），分别表示处于最终平衡状态时绳结X的横坐标和纵坐标。两个数以一个空格隔开。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>输入样例#1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">0 0 1</span><br><span class="line">0 2 1</span><br><span class="line">1 1 1</span><br></pre></td></tr></table></figure>
-<p>输出样例#1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.577 1.000</span><br></pre></td></tr></table></figure>
-<h1 id="自闭过程"><a href="#自闭过程" class="headerlink" title="自闭过程"></a>自闭过程</h1><p>我做此题时遇到的主要毒瘤点</p>
-<ol>
-<li>二维随机点</li>
-<li>点的坐标是实数</li>
-<li>物理上（我真不知道平衡意味着重力势能最小QAQ）</li>
-</ol>
-<p>多打一个 “ * “ debug到麻（2.5h）</p>
-<p>这一定是我最后一次手残！！！</p>
-<p>Ps.  人品爆炸生日做  srand()  一发过</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">db ansx,ansy;</span><br><span class="line">db ipx[N],ipy[N],w[N];</span><br><span class="line">db sh=<span class="number">999999999.0</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">db <span class="title">cal</span><span class="params">(db a,db b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	db ener=<span class="number">0.00</span>;</span><br><span class="line">	db dertx,derty;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"!!"&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dertx=a-ipx[i];</span><br><span class="line">		derty=b-ipy[i];</span><br><span class="line">		ener+=((db)<span class="built_in">sqrt</span>(dertx*dertx+derty*derty))*(db)w[i];</span><br><span class="line">		<span class="comment">//printf("%.3f %.3f %.3f\n",dertx,derty,((db)sqrt(dertx*dertx*+derty*derty))*(db)w[i]);</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ener;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SA</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(db T=<span class="number">2003.0</span>; T&gt;<span class="number">1e-14</span>;T*=<span class="number">0.999</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//cout&lt;&lt;"AC!"&lt;&lt;endl;</span></span><br><span class="line">		db nowx,nowy;</span><br><span class="line">		nowx=ansx+(rand()*<span class="number">2</span>-RAND_MAX)*T;</span><br><span class="line">		nowy=ansy+(rand()*<span class="number">2</span>-RAND_MAX)*T;</span><br><span class="line">		db qaq=cal(nowx,nowy);</span><br><span class="line">		<span class="comment">//printf("%.3f %.3f %.3f\n",nowx,nowy,qaq);</span></span><br><span class="line">		<span class="keyword">if</span>(qaq&lt;=sh)</span><br><span class="line">		&#123;</span><br><span class="line">			sh=qaq;</span><br><span class="line">			ansx=nowx;</span><br><span class="line">			ansy=nowy;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">exp</span>((sh-qaq)/T)*RAND_MAX&gt;rand())</span><br><span class="line">		&#123;</span><br><span class="line">			ansx=nowx;</span><br><span class="line">			ansy=nowy;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//printf("%.3f\n",qaq);</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	srand(<span class="number">20030427</span>);</span><br><span class="line">	<span class="comment">//freopen("in.in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen("out.out","w",stdout);</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ipx[i];</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ipy[i];</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;w[i];</span><br><span class="line">		ansx+=ipx[i];</span><br><span class="line">		ansy+=ipy[i];</span><br><span class="line">	&#125;</span><br><span class="line">	ansx=ansx/(db)n;</span><br><span class="line">	ansy=ansy/(db)n;</span><br><span class="line">	sh=cal(ansx,ansy);</span><br><span class="line">	SA();</span><br><span class="line">	SA();</span><br><span class="line">	SA();</span><br><span class="line">	<span class="comment">//printf("%.3f\n",cal(0.000,1.00));</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.3f %.3f"</span>,ansx,ansy);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="SA小总结"><a href="#SA小总结" class="headerlink" title="SA小总结"></a>SA小总结</h1><ol>
-<li><p>EXP参数必须是负数</p>
-</li>
-<li><p>以一定概率接受差解</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">exp</span>(dt/t)*RAND_MAX&gt;rand()) &#123;唔呣;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>别用clock() ||  time();</p>
-</li>
-</ol>
+<p>由于之前一直没有振奋精神彻底搞懂<code>Push_Down</code></p>
+<p>自己对线段树的理解一直模棱两可</p>
+<p>仔细想了一想:</p>
+<ul>
+<li><code>Push_Down</code>只是子节点的值维护，同时把<code>lazy_tag</code>下传</li>
+<li>当前节点在修改时就已保证当前节点已经维护</li>
+</ul>
+<p>然而自己做这题时还是遇到一些坑点</p>
+<p>我不知道在何时看到了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tree[k].sum+=(mid-l+1)*tree[k].add)%mod;</span><br></pre></td></tr></table></figure>
+<p>也许编译标准不同？  总之我改语法改到手麻….</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls k&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs k&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((tree[k].l+tree[k].r)&gt;&gt;1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">in</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL w=<span class="number">0</span>,x=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))&#123;w|=ch==<span class="string">'-'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>), ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line">LL n,m,mod,a[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Seg</span>&#123;</span>	LL mul,add,sum,l,r; &#125;tree[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(LL k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k].sum=tree[ls].sum+tree[rs].sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(LL k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[ls].add*=tree[k].mul;   tree[ls].add%=mod;</span><br><span class="line">    tree[ls].mul*=tree[k].mul;   tree[ls].mul%=mod;</span><br><span class="line">    tree[ls].sum*=tree[k].mul;  tree[ls].sum%=mod;</span><br><span class="line">    tree[rs].add*=tree[k].mul;  tree[rs].add%=mod;</span><br><span class="line">    tree[rs].mul*=tree[k].mul;  tree[rs].mul%=mod;</span><br><span class="line">    tree[rs].sum*=tree[k].mul;  tree[rs].sum%=mod;</span><br><span class="line">    tree[k].mul=<span class="number">1</span>;</span><br><span class="line">    tree[ls].add+=tree[k].add;  tree[ls].add%=mod;</span><br><span class="line">    tree[rs].add+=tree[k].add;  tree[rs].add%=mod;</span><br><span class="line">    tree[ls].sum+=tree[k].add*(tree[ls].r-tree[ls].l+<span class="number">1</span>);   tree[ls].sum%=mod;</span><br><span class="line">    tree[rs].sum+=tree[k].add*(tree[rs].r-tree[rs].l+<span class="number">1</span>);   tree[rs].sum%=mod;</span><br><span class="line">    tree[k].add=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(LL k,LL L,LL R)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k].l=L; tree[k].r=R;</span><br><span class="line">    tree[k].mul=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(L==R)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].mul=<span class="number">1</span>;</span><br><span class="line">        tree[k].sum=tree[k].add=<span class="number">0</span>;</span><br><span class="line">        tree[k].sum=in();</span><br><span class="line">        tree[k].sum%=mod;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    build(ls,L,mid);</span><br><span class="line">    build(rs,mid+<span class="number">1</span>,R);</span><br><span class="line">    update(k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ad</span><span class="params">(LL k,LL L,LL R,LL y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=L&amp;&amp;tree[k].r&lt;=R)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].add+=y;</span><br><span class="line">        <span class="comment">//tree[k].sum*=tree[k].mul;</span></span><br><span class="line">        tree[k].sum+=(tree[k].r-tree[k].l+<span class="number">1</span>)*y;</span><br><span class="line">        tree[k].sum%=mod;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pushdown(k);</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=mid) ad(ls,L,R,y);</span><br><span class="line">    <span class="keyword">if</span>(R&gt;mid)  ad(rs,L,R,y);</span><br><span class="line">    update(k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mu</span><span class="params">(LL k,LL L,LL R,LL y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=L&amp;&amp;tree[k].r&lt;=R)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].mul*=y;  tree[k].mul%=mod;</span><br><span class="line">        tree[k].add*=y;  tree[k].add%=mod;</span><br><span class="line">        tree[k].sum*=y;  tree[k].sum%=mod;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pushdown(k);</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=mid) mu(ls,L,R,y);</span><br><span class="line">    <span class="keyword">if</span>(R&gt;mid)  mu(rs,L,R,y);</span><br><span class="line">    update(k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">query</span><span class="params">(LL k,LL L,LL R)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=L&amp;&amp;tree[k].r&lt;=R)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (tree[k].sum)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    LL ans=<span class="number">0</span>;</span><br><span class="line">    pushdown(k);</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;=L) ans+=query(ls,L,R); ans%=mod;</span><br><span class="line">    <span class="keyword">if</span>(mid&lt;R) ans+=query(rs,L,R); ans%=mod;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=in(); m=in(); mod=in();</span><br><span class="line">    build(<span class="number">1</span>,<span class="number">1</span>,n);</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        LL A,B,C,D;</span><br><span class="line">        A=in(); B=in(); C=in();</span><br><span class="line">        <span class="keyword">switch</span>(A)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:&#123;D=in();mu(<span class="number">1</span>,B,C,D);<span class="keyword">break</span>;&#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:&#123;D=in();ad(<span class="number">1</span>,B,C,D);<span class="keyword">break</span>;&#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:&#123;<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,query(<span class="number">1</span>,B,C)%mod);<span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>完结撒花！</p>
+<p>线段树好像没之前想的那么难了</p>
 
       
 
@@ -275,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://geother.github.io/2019/04/01/P1337/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://geother.github.io/2019/04/05/SEG/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,18 +272,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/02/DIJ/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/05/P4568/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Dijkstra+堆优化小结
+          分层图+最短路
         
       </div>
     </a>
   
   
-    <a href="/2019/04/01/P1131/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">蒟蒻第一道树形DP</div>
+    <a href="/2019/04/02/JLOI2019/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JLOI2019游记</div>
       <i class="icon-circle-right"></i>
     </a>
   
