@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Geother">
 <meta property="og:description" content="个人感觉是DP想法的延伸 这种算法还是挺裸的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-04T16:41:50.341Z">
+<meta property="og:updated_time" content="2019-05-15T04:10:22.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分层图+最短路">
 <meta name="twitter:description" content="个人感觉是DP想法的延伸 这种算法还是挺裸的">
@@ -24,7 +24,7 @@
     <link rel="alternative" href="/atom.xml" title="Geother" type="application/atom+xml">
   
   
-    <link rel="icon" href="/pic/tou.JPG">
+    <link rel="icon" href="/img/tou.JPG">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">YBH</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Born to Fight</p>
+		<p class="header-subtitle">竜神の剣を喰らえ</p>
 		
 
 		<nav class="header-menu">
@@ -110,7 +110,7 @@
 			  <h1 class="header-author js-header-author">YBH</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Born to Fight<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>竜神の剣を喰らえ<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -171,8 +171,6 @@
       
         <p>个人感觉是DP想法的延伸</p>
 <p>这种算法还是挺裸的</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=509106775&auto=0&height=66"></iframe>
-
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">Alice和Bob现在要乘飞机旅行，他们选择了一家相对便宜的航空公司。该航空公司一共在nn个城市设有业务，设这些城市分别标记为00到n-1n−1，一共有mm种航线，每种航线连接两个城市，并且航线有一定的价格。</span><br><span class="line"></span><br><span class="line">Alice和Bob现在要从一个城市沿着航线到达另一个城市，途中可以进行转机。航空公司对他们这次旅行也推出优惠，他们可以免费在最多kk种航线上搭乘飞机。那么Alice和Bob这次出行最少花费多少？</span><br><span class="line"></span><br><span class="line">输入输出格式</span><br><span class="line">输入格式：</span><br><span class="line">数据的第一行有三个整数，n,m,kn,m,k，分别表示城市数，航线数和免费乘坐次数。</span><br><span class="line">第二行有两个整数，s,ts,t，分别表示他们出行的起点城市编号和终点城市编号。</span><br><span class="line">接下来有m行，每行三个整数，a,b,ca,b,c，表示存在一种航线，能从城市aa到达城市bb，或从城市bb到达城市aa，价格为cc。</span><br><span class="line"></span><br><span class="line">输出格式：</span><br><span class="line">只有一行，包含一个整数，为最少花费。</span><br><span class="line"></span><br><span class="line">输入输出样例</span><br><span class="line">输入样例#1： </span><br><span class="line">5 6 1</span><br><span class="line">0 4</span><br><span class="line">0 1 5</span><br><span class="line">1 2 5</span><br><span class="line">2 3 5</span><br><span class="line">3 4 5</span><br><span class="line">2 3 3</span><br><span class="line">0 2 100</span><br><span class="line">输出样例#1： </span><br><span class="line">8</span><br></pre></td></tr></table></figure>
 <p>直接建一个K层分层图乱跑</p>
@@ -264,15 +262,6 @@
 
   
 <nav id="article-nav">
-  
-    <a href="/2019/04/18/ybh1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          YBHの阶段总结
-        
-      </div>
-    </a>
   
   
     <a href="/2019/04/05/SEG/" id="article-nav-older" class="article-nav-link-wrap">
@@ -402,15 +391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
               </li>
              
               <li class="article-tag-list-item">
