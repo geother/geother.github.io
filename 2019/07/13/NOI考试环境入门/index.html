@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wangtou.JPG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wangtou.JPG?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OI,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="YBH弄的 NOI linux&amp;amp;Emacs 超轻量级使用指南，足够我这种蒟蒻使用。顺便安利一下linux，虽然我莫得linux灵魂，但是这个奇幻的系统竟然如此之香！，洋溢着原始却又浑然天成の美，令Win10相形见绌（我感觉）。">
+<meta name="keywords" content="OI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOI考试环境入门">
+<meta property="og:url" content="https://geother.github.io/2019/07/13/NOI考试环境入门/index.html">
+<meta property="og:site_name" content="Geother">
+<meta property="og:description" content="YBH弄的 NOI linux&amp;amp;Emacs 超轻量级使用指南，足够我这种蒟蒻使用。顺便安利一下linux，虽然我莫得linux灵魂，但是这个奇幻的系统竟然如此之香！，洋溢着原始却又浑然天成の美，令Win10相形见绌（我感觉）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/02/ZYEnNF.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/13/Z4yAO0.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/13/Z4yVmV.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/13/Z4yZwT.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/13/Z4ykyq.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/13/Z4yFln.md.png">
+<meta property="og:updated_time" content="2019-07-13T14:36:30.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NOI考试环境入门">
+<meta name="twitter:description" content="YBH弄的 NOI linux&amp;amp;Emacs 超轻量级使用指南，足够我这种蒟蒻使用。顺便安利一下linux，虽然我莫得linux灵魂，但是这个奇幻的系统竟然如此之香！，洋溢着原始却又浑然天成の美，令Win10相形见绌（我感觉）。">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/02/ZYEnNF.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://geother.github.io/2019/07/13/NOI考试环境入门/">
+
+
+
+
+
+  <title>NOI考试环境入门 | Geother</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Geother</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">竜神の剣を喰らえ</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://geother.github.io/2019/07/13/NOI考试环境入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YBH">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geother">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NOI考试环境入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-13T22:08:46+08:00">
+                2019-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>YBH弄的 <strong>NOI linux&amp;Emacs 超轻量级使用指南</strong>，足够我这种蒟蒻使用。顺便安利一下linux，虽然我莫得linux灵魂，但是这个奇幻的系统竟然如此之香！，洋溢着原始却又浑然天成の美，令Win10相形见绌（我感觉）。</p>
+<p><img src="https://s2.ax1x.com/2019/07/02/ZYEnNF.jpg" alt></p>
+<a id="more"></a>
+<h1 id="NOI-linux"><a href="#NOI-linux" class="headerlink" title="NOI  linux"></a>NOI  linux</h1><h2 id="linux-的安装"><a href="#linux-的安装" class="headerlink" title="linux 的安装"></a>linux 的安装</h2><p>安装时的启动U盘制作有待学习……</p>
+<p>在安装的分盘是貌似很有说道，细节如下：</p>
+<ul>
+<li>选择其他选项后，点击继续按钮</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4yAO0.md.png" alt></p>
+<ul>
+<li>选择新建分区表</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4yVmV.md.png" alt></p>
+<ul>
+<li>首先选择创建与机器内存大小相同的交换空间</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4yZwT.md.png" alt></p>
+<ul>
+<li>其次将剩余空间挂载于根节点</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4ykyq.md.png" alt></p>
+<ul>
+<li>在引导程序选项中，如果您的电脑有硬盘保护卡请选择第二项，如果没有则选择第一项，之后点击现在安装</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4yFln.md.png" alt></p>
+<h2 id="linux-终端的日常使用"><a href="#linux-终端的日常使用" class="headerlink" title="linux 终端的日常使用"></a>linux 终端的日常使用</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">打开终端后cd到桌面</th>
+<th><code>cd ~/Desktop</code>   OR    <code>cd Desktop/</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>查看当前路径</strong></td>
+<td><strong><code>pwd</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>列出文件夹下文件</strong></td>
+<td><strong><code>ls</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>删除名为“233”的文件</strong></td>
+<td><strong><code>rm -f 233</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>编译“test.cpp”</strong></td>
+<td><strong><code>g++ test.cpp -o test</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>运行“test”</strong></td>
+<td><strong><code>./test</code></strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="Emacs"><a href="#Emacs" class="headerlink" title="Emacs"></a>Emacs</h1><h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><h3 id="前置入门"><a href="#前置入门" class="headerlink" title="前置入门"></a>前置入门</h3><h4 id="组合按键"><a href="#组合按键" class="headerlink" title="组合按键"></a>组合按键</h4><p>Emacs中大量的按键操作都是各式各样的组合按键（快捷键），下面是几种通常的约定：</p>
+<ul>
+<li><code>Ctrl</code>键：表示为<code>C</code> </li>
+<li><code>Alt</code>键：表示为<code>M</code> </li>
+<li><code>Shift</code>键：表示为<code>S</code> </li>
+<li>组合按键：比如向下移动一行的组合按键是<code>Ctrl+n</code>，就表示为：<code>C-n</code>，其含义表示同时按下键盘上的<code>Ctrl</code>和<code>n</code>键。</li>
+</ul>
+<h4 id="按键顺序"><a href="#按键顺序" class="headerlink" title="按键顺序"></a>按键顺序</h4><p>有时候用多个组合按键来表示一种操作，比如以下按键序列：<code>C-x C-f [文件路径] &lt;RET&gt;</code>就表示<code>打开文件</code>的操作，它表示这样的操作含义：先同时按下<code>Ctrl</code>和<code>x</code>键，然后松开，紧接着马上再同时按下<code>Ctrl</code>和<code>f</code>键，然后再松开，然后在下方的输入栏中输入文件路径，输入完之后按回车键（用<code>&lt;RET&gt;</code>表示），最后就打开了一个文件。</p>
+<p>还有一种按键顺序：<code>C-x o</code>，表示切换到另外一个缓冲区，它是这样一组按键：先同时按下<code>Ctrl</code>和<code>x</code>键，然后松开，然后紧接着按字母<code>o</code>键。</p>
+<p>还有另外一种按键顺序，比如以下按键序列：<code>C-u [10] C-p</code>，就表示这样的操作含义：先同时按下<code>Ctrl</code>和<code>u</code>键，然后松开，然后依次按<code>1</code>和<code>0</code>键，然后松开，最后再同时按<code>Ctrl</code>和<code>p</code>键。这组按键达到的效果就是把光标从当前位置往上移动10行。</p>
+<h4 id="特殊按键"><a href="#特殊按键" class="headerlink" title="特殊按键"></a>特殊按键</h4><ul>
+<li>表示输入内容，用方括号括起来：<code>[输入的内容]</code> </li>
+<li>表示回车键：<code>&lt;RET&gt;</code> </li>
+<li>表示其他键：比如<code>&lt;Backspace&gt;</code>表示退格键（删除键），<code>&lt;Delete&gt;</code>表示删除键，<code>&lt;TAB&gt;</code>表示TAB键，<code>&lt;Left&gt;</code>表示左箭头键，<code>&lt;Right&gt;</code>表示右箭头键，<code>&lt;Up&gt;</code>表示上箭头键，<code>&lt;Down&gt;</code>表示下箭头键，<code>&lt;f5&gt;</code>表示F5键。</li>
+</ul>
+<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>文本操作，无外乎打开文件、编辑文件、保存文件，涉及的核心、最高频命令非常简单，整理如下：</p>
+<ul>
+<li><code>C-x C-f [文件路径] &lt;RET&gt;</code>：打开一个文件</li>
+<li><code>C-n</code>：将光标向下移动一行</li>
+<li><code>C-p</code>：将光标向上移动一行</li>
+<li><code>C-g</code>：取消之前的按键（将会成为最常用的按键之一）</li>
+<li><code>C-x C-s</code>：保存文件</li>
+<li><strong><code>C-x C-c</code>：退出Emacs</strong></li>
+</ul>
+<h3 id="常用操作分类汇总"><a href="#常用操作分类汇总" class="headerlink" title="常用操作分类汇总"></a>常用操作分类汇总</h3><h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><ul>
+<li><strong><code>C-x C-f [文件路径] &lt;RET&gt;</code>：打开一个文件</strong></li>
+<li><code>C-x C-s</code>：保存文件</li>
+</ul>
+<h5 id="移动操作"><a href="#移动操作" class="headerlink" title="移动操作"></a>移动操作</h5><ul>
+<li><code>C-n</code>：将光标向下移动一行</li>
+<li><code>C-p</code>：将光标向上移动一行</li>
+<li><code>C-b</code>：将光标左移一个字符</li>
+<li><code>C-f</code>：将光标右移一个字符</li>
+<li><code>M-f</code>：将光标右移一个单词</li>
+<li><code>M-b</code>：将光标左移一个单词</li>
+<li><code>C-v</code>：向下移动一屏</li>
+<li><code>M-v</code>：向上移动一屏</li>
+<li><code>C-l</code>：将当前光标所在行移动到屏幕中央（注意：这里是字母<code>L</code>）</li>
+<li><code>C-a</code>：将光标移到行首</li>
+<li><code>C-e</code>：将光标移到行尾</li>
+<li><code>M-S-&lt;</code>：将光标移动到文件开头</li>
+<li><code>M-S-&gt;</code>：将光标移动到文件末尾</li>
+<li><code>M-m</code>：将光标移动到行首的第一个非空白字符</li>
+</ul>
+<h5 id="查找与替换操作"><a href="#查找与替换操作" class="headerlink" title="查找与替换操作"></a>查找与替换操作</h5><ul>
+<li><code>C-s [查找的内容]</code>：向前查找</li>
+<li><code>C-r [查找的内容]</code>：向后查找</li>
+<li><code>C-M-s [查找的内容]</code>：向前正则查找</li>
+<li><code>C-M-r [查找的内容]</code>：向后正则查找</li>
+<li><code>M-S-%</code>：查找并替换，操作步骤如下：按下<code>M-S-%</code>键启动查找替换，输入要被替换的词，回车，然后输入要替换的词，再回车。被替换的词此时会高亮起来，这时，输入y替换并跳到下一个，输入n忽略并跳到下一个，输入q结束，输入！替换剩下的全部。</li>
+</ul>
+<h5 id="文本选择操作"><a href="#文本选择操作" class="headerlink" title="文本选择操作"></a>文本选择操作</h5><ul>
+<li><code>C-S-e</code>：选中从当前位置到行尾的文本</li>
+<li><code>C-S-n</code>：从当前位置开始往下选中一行文本</li>
+<li><code>C-S-p</code>：从当前位置开始往上选中一行文本</li>
+<li><code>C-S-f</code>：从当前位置开始往后选中一个字符</li>
+<li><code>C-S-b</code>：从当前位置开始往前选中一个字符</li>
+<li><code>M-S-f</code>：从当前位置开始往后选中一个单词</li>
+<li><code>M-S-b</code>：从当前位置开始往前选中一个单词</li>
+<li><code>M-S-e</code>：选中从当前位置开始到当前句尾的文本</li>
+<li><code>M-S-a</code>：选中从当前位置开始到当前句首的文本</li>
+<li><code>C-S-v</code>：向下选择一屏</li>
+<li><code>M-S-v</code>：向上选择一屏</li>
+<li><code>C-S-l</code>：让当前光标所在行居中</li>
+<li><code>C-x h</code>：全选</li>
+</ul>
+<h5 id="文本编辑操作"><a href="#文本编辑操作" class="headerlink" title="文本编辑操作"></a>文本编辑操作</h5><ul>
+<li>插入文本：只要光标在当前缓冲区，就可以直接输入插入文本。</li>
+<li><code>C-k</code>：删除光标到行尾的所有字符</li>
+<li><code>C-u [N] [操作序列]</code>：重复执行一个操作序列N次</li>
+<li><code>C-/</code>或<code>C-x u</code>：撤销（undo）上次操作，多次按可以撤销之前的多次操作</li>
+<li><code>C-g C-/</code>：重做（redo），用于重做上次的撤销动作（撤销之后后悔了，想恢复重做）</li>
+<li><code>&lt;Backspace&gt;</code>：删除当前光标前的一个字符</li>
+<li><code>C-&lt;Backspace&gt;</code>：删除当前光标前的一个单词</li>
+<li><code>C-d</code>或<code>&lt;Delete&gt;</code>：删除当前光标后的一个字符</li>
+<li><code>M-&lt;Backspace&gt;</code>：剪切当前光标前的一个字符到剪贴板</li>
+<li><code>M-d</code>：剪切当前光标后的一个字符到剪贴板</li>
+<li><code>C-k</code>：剪切从光标到行尾的字符到剪贴板</li>
+<li><code>C-y</code>：粘贴剪贴板中的文本到当前光标位置</li>
+<li><code>M-w</code>：复制当前选中的字符</li>
+<li><code>C-w</code>：剪切当前选择的字符到剪贴板</li>
+<li><code>C-a C-k</code>：剪切一整行到剪贴板中，其实也可以用于删除一整行</li>
+<li><code>C-e &lt;RET&gt;</code>：在当前行下方插入一空行</li>
+<li><code>C-x C-q</code>：让当前buffer在“只读”和“读写”两种编辑模式之间切换</li>
+</ul>
+<h5 id="多窗格与多窗口"><a href="#多窗格与多窗口" class="headerlink" title="多窗格与多窗口"></a>多窗格与多窗口</h5><p>首先要明确一下Emacs中窗格与窗口的概念的区别：每个窗格其实就是一个缓冲区，一个窗口中可以同时打开多个窗格，而窗口就是像Windows那样的GUI窗口。</p>
+<ul>
+<li><code>C-x 1</code>：仅保留当前窗格，关闭其他窗格</li>
+<li><code>C-x 2</code>：在垂直方向打开2个窗格</li>
+<li><code>C-x 3</code>：在水平方向打开2个窗格</li>
+<li><code>C-x o</code>：在不同窗格之间切换</li>
+<li><code>C-x 0</code>：关闭当前窗格</li>
+<li><code>C-x S-{</code>：减小当前窗格的水平宽度</li>
+<li><code>C-x S-}</code>：缩小当前窗格的水平宽度</li>
+<li><code>C-x S-^</code>：增大当前窗格的垂直高度</li>
+<li><code>C-M-v</code>：在另一个窗格中向下滚动一屏（但光标还保留在当前窗格）</li>
+<li><code>C-M-S-v</code>：在另一个窗格中向上滚动一屏（但光标还保留在当前窗格）</li>
+<li><code>M-x make-frame</code>：打开一个新窗口</li>
+<li><code>M-x delete-frame</code>：关闭当前窗口</li>
+<li><code>C-z</code>：挂起当前的窗口（相当于最小化当前的窗口）</li>
+</ul>
+<h5 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h5><ul>
+<li><code>C-x C-b</code>：在一个新窗格中列出当前所有的缓冲区</li>
+<li><code>C-x b xxx &lt;RET&gt;</code>：切换到名为<code>xxx</code>的缓冲区</li>
+<li><code>C-x k xxx &lt;RET&gt;</code>：关闭一个名为<code>xxx</code>的缓冲区（如果直接按回车，默认关闭的是当前缓冲区）</li>
+<li><code>C-x s</code>：一个个询问是否保存当前每个缓冲区的内容</li>
+<li><code>M-x kill-some-buffers &lt;RET&gt;</code>：一个个询问是否关闭当前打开的缓冲区</li>
+<li><code>C-x &lt;Left&gt;</code>：在多个缓冲区之间切换</li>
+<li><code>C-x &lt;Right&gt;</code>：在多个缓冲区之间切换</li>
+</ul>
+<h5 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h5><ul>
+<li><code>C-x d S-~ &lt;RET&gt;</code>：打开Emacs配置文件所在路径</li>
+<li><code>C-h v load-path &lt;RET&gt;</code>：查看Emacs的加载路径</li>
+</ul>
+<h5 id="帮助操作"><a href="#帮助操作" class="headerlink" title="帮助操作"></a>帮助操作</h5><ul>
+<li><code>C-h t</code>：查看Emacs快速指南</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    YBH
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://geother.github.io/2019/07/13/NOI考试环境入门/" title="NOI考试环境入门">https://geother.github.io/2019/07/13/NOI考试环境入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OI/" rel="tag"><i class="fa fa-tag"></i> OI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/魔改/" rel="next" title="Next魔改传">
+                <i class="fa fa-chevron-left"></i> Next魔改传
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2076/11/30/poem/" rel="prev" title="在？出来背诗">
+                在？出来背诗 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="YBH">
+            
+              <p class="site-author-name" itemprop="name">YBH</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/geother" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:geother@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.luogu.org/space/show?uid=141933" target="_blank" title="LuoGu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>LuoGu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/168663177" target="_blank" title="Bilibili">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Bilibili</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NOI-linux"><span class="nav-number">1.</span> <span class="nav-text">NOI  linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-的安装"><span class="nav-number">1.1.</span> <span class="nav-text">linux 的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-终端的日常使用"><span class="nav-number">1.2.</span> <span class="nav-text">linux 终端的日常使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Emacs"><span class="nav-number">2.</span> <span class="nav-text">Emacs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-number">2.1.</span> <span class="nav-text">常用快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置入门"><span class="nav-number">2.1.1.</span> <span class="nav-text">前置入门</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组合按键"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">组合按键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按键顺序"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">按键顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊按键"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">特殊按键</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.1.2.</span> <span class="nav-text">Quick Start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作分类汇总"><span class="nav-number">2.1.3.</span> <span class="nav-text">常用操作分类汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件操作"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#移动操作"><span class="nav-number">2.1.3.1.1.</span> <span class="nav-text">移动操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找与替换操作"><span class="nav-number">2.1.3.1.2.</span> <span class="nav-text">查找与替换操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本选择操作"><span class="nav-number">2.1.3.1.3.</span> <span class="nav-text">文本选择操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本编辑操作"><span class="nav-number">2.1.3.1.4.</span> <span class="nav-text">文本编辑操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多窗格与多窗口"><span class="nav-number">2.1.3.1.5.</span> <span class="nav-text">多窗格与多窗口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缓冲区"><span class="nav-number">2.1.3.1.6.</span> <span class="nav-text">缓冲区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置相关"><span class="nav-number">2.1.3.1.7.</span> <span class="nav-text">配置相关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#帮助操作"><span class="nav-number">2.1.3.1.8.</span> <span class="nav-text">帮助操作</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YBH</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
