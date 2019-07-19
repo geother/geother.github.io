@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,14 +94,13 @@
 <meta property="og:site_name" content="Geother">
 <meta property="og:description" content="本博客经历了一次大型改造，耗时4.33个小时，零前端基础的我在此过程中获益颇丰。同时我将重新整理博客，抛弃曾经的低质量文章，并开始OIer生涯第二阶段。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6MhOH.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6Y0de.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6NaUe.jpg">
-<meta property="og:updated_time" content="2019-07-16T03:36:09.685Z">
+<meta property="og:updated_time" content="2019-07-19T14:42:00.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Next魔改传">
 <meta name="twitter:description" content="本博客经历了一次大型改造，耗时4.33个小时，零前端基础的我在此过程中获益颇丰。同时我将重新整理博客，抛弃曾经的低质量文章，并开始OIer生涯第二阶段。">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/09/Z6MhOH.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/09/Z6Y0de.md.png">
 
 
 
@@ -109,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -322,7 +321,6 @@
 
       
         <p>本博客经历了一次大型改造，耗时4.33个小时，零前端基础的我在此过程中获益颇丰。同时我将重新整理博客，抛弃曾经的低质量文章，并开始OIer生涯第二阶段。</p>
-<p><img src="https://s2.ax1x.com/2019/07/09/Z6MhOH.png" alt></p>
 <a id="more"></a>
 <h2 id="Part-1"><a href="#Part-1" class="headerlink" title="Part.1"></a>Part.1</h2><p>最终我还是选择了Next主题。虽然这是一个所谓烂大街的主题，但是它就是好看啊。我的本地最开始装的是从网盘下载的别人分享的源码，导致版本极其低，甚至与现在相比有明显的加载速度差距，于是我毅然决然从<code>github</code>镜像了一份最新版（实际上是我把老版本改崩了）</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//其实并不是它崩了，而是我石乐志</span><br><span class="line"><span class="selector-id">#social</span>:</span><br><span class="line">  GitHub: https://github.com/geother || github</span><br><span class="line">  <span class="selector-tag">E-Mail</span>: <span class="selector-tag">mailto</span><span class="selector-pseudo">:geother</span>@<span class="keyword">foxmail</span>.<span class="keyword">com</span> || envelope</span><br><span class="line">  LuoGu: https://www.luogu.org/space/show?uid=<span class="number">141933</span></span><br><span class="line">  Bilibili: https://space.bilibili.com/<span class="number">168663177</span></span><br></pre></td></tr></table></figure>
@@ -339,10 +337,11 @@
 <h2 id="Part-3"><a href="#Part-3" class="headerlink" title="Part.3"></a>Part.3</h2><p>这部分最耗时间。</p>
 <p>可以看出，在原始博客上的“文章目录”类的链接有一条下划线，让我想撞墙。于是我发现这是一条由CSS控制的规则，我<code>F12</code>后发现了与之联系的所谓“main.css”。这就是噩梦的开始。我开始在本地的CSS目录寻找这个文件，（当然没找到），后来我好想有了一些想法，我猜测这个文件可能是由当前的网页渲染出的，于是我在所有的sidebar的CSS中寻找<code>border-bottom:</code>，其实理论上能找到，但要是我找到了我就不是我了。</p>
 <p><img src="https://s2.ax1x.com/2019/07/09/Z6NaUe.jpg" alt></p>
-<p>最后我发起“背水一战”，硬着头皮在Custom styles中写下了</p>
+<p>最后我只得硬着头皮在Custom styles中写下了</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#555</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;    </span><br><span class="line">    <span class="attribute">word-wrap</span>: break-word;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在本地服务器上跑了一下，woc？！，真就<del>秒了</del></p>
 <h2 id="Part-4"><a href="#Part-4" class="headerlink" title="Part.4"></a>Part.4</h2><p>想了一想，还是把进度条去掉了，因为进度条的颜色有点违和而我懒得改了…..</p>
+<p>Update.进度条又被我加上了，因为不知道加载到哪里就好像进入了知识的荒原。</p>
 <p>我还没忘加上版权声明（我写的玩意能有什么值钱的，只不过是那个版权声明的红色引用框太好看了，协议用了看起来<del>比较NB</del>的这个）</p>
 <blockquote>
 <p>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</p>
@@ -370,9 +369,9 @@
     <strong>本文链接：</strong>
     <a href="https://geother.github.io/2019/07/09/魔改/" title="Next魔改传">https://geother.github.io/2019/07/09/魔改/</a>
   </li>
-  <li class="post-copyright-license">
+<li class="post-copyright-license">
     <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明YBH及出处哦！
   </li>
 </ul>
 
@@ -483,7 +482,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,6 +540,24 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://et-love.github.io/" title="JST大佬" target="_blank">JST大佬</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/zwp2004/" title="ZWP大佬" target="_blank">ZWP大佬</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -595,7 +612,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
