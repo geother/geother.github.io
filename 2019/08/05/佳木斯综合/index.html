@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="不务正业,">
+  <meta name="keywords" content="OI-游记,">
 
 
 
@@ -89,21 +89,18 @@
 
 
 
-<meta name="description" content="本博客经历了一次大型改造，耗时4.33个小时。同时重新整理博客，抛弃曾经的低质量文章。">
-<meta name="keywords" content="不务正业">
+<meta name="description" content="集训内容小地图  单调栈、单调队列、并查集 欧拉函数、欧拉定理、费马小定理、中国剩余定理 组合数、ex_gcd、逆元 大模拟、分治、贪心 lca,倍增 强连通、边双、点双 二分答案 状压 树型 热点问题选讲">
+<meta name="keywords" content="OI-游记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Next魔改传">
-<meta property="og:url" content="https://geother.github.io/2019/07/09/魔改/index.html">
+<meta property="og:title" content="佳木斯集训总结祭">
+<meta property="og:url" content="https://geother.github.io/2019/08/05/佳木斯综合/index.html">
 <meta property="og:site_name" content="Geother">
-<meta property="og:description" content="本博客经历了一次大型改造，耗时4.33个小时。同时重新整理博客，抛弃曾经的低质量文章。">
+<meta property="og:description" content="集训内容小地图  单调栈、单调队列、并查集 欧拉函数、欧拉定理、费马小定理、中国剩余定理 组合数、ex_gcd、逆元 大模拟、分治、贪心 lca,倍增 强连通、边双、点双 二分答案 状压 树型 热点问题选讲">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6Y0de.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6NaUe.jpg">
-<meta property="og:updated_time" content="2019-08-05T14:08:08.915Z">
+<meta property="og:updated_time" content="2019-08-05T14:12:37.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Next魔改传">
-<meta name="twitter:description" content="本博客经历了一次大型改造，耗时4.33个小时。同时重新整理博客，抛弃曾经的低质量文章。">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/09/Z6Y0de.md.png">
+<meta name="twitter:title" content="佳木斯集训总结祭">
+<meta name="twitter:description" content="集训内容小地图  单调栈、单调队列、并查集 欧拉函数、欧拉定理、费马小定理、中国剩余定理 组合数、ex_gcd、逆元 大模拟、分治、贪心 lca,倍增 强连通、边双、点双 二分答案 状压 树型 热点问题选讲">
 
 
 
@@ -133,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://geother.github.io/2019/07/09/魔改/">
+  <link rel="canonical" href="https://geother.github.io/2019/08/05/佳木斯综合/">
 
 
 
 
 
-  <title>Next魔改传 | Geother</title>
+  <title>佳木斯集训总结祭 | Geother</title>
   
 
 
@@ -266,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://geother.github.io/2019/07/09/魔改/">
+    <link itemprop="mainEntityOfPage" href="https://geother.github.io/2019/08/05/佳木斯综合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YBH">
@@ -283,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Next魔改传</h1>
+          <h1 class="post-title" itemprop="name headline">佳木斯集训总结祭</h1>
         
 
         <div class="post-meta">
@@ -323,34 +320,47 @@
       
 
       
-        <p>本博客经历了一次大型改造，耗时4.33个小时。同时重新整理博客，抛弃曾经的低质量文章。</p>
+        <p><i class="fa fa-diamond" aria-hidden="true"></i>集训内容小地图</p>
+<ol>
+<li>单调栈、单调队列、并查集</li>
+<li>欧拉函数、欧拉定理、费马小定理、中国剩余定理</li>
+<li>组合数、ex_gcd、逆元</li>
+<li>大模拟、分治、贪心</li>
+<li>lca,倍增</li>
+<li>强连通、边双、点双</li>
+<li>二分答案</li>
+<li>状压</li>
+<li>树型</li>
+<li>热点问题选讲</li>
+</ol>
 <a id="more"></a>
-<h2 id="Part-1"><a href="#Part-1" class="headerlink" title="Part.1"></a>Part.1</h2><p>最终我还是选择了Next主题。虽然这是一个所谓烂大街的主题，但是它就是好看啊。我的本地最开始装的是从网盘下载的别人分享的源码，导致版本极其低，甚至与现在相比有明显的加载速度差距，于是我毅然决然从<code>github</code>镜像了一份最新版（实际上是我把老版本改崩了）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//其实并不是它崩了，而是我石乐志</span><br><span class="line"><span class="selector-id">#social</span>:</span><br><span class="line">  GitHub: https://github.com/geother || github</span><br><span class="line">  <span class="selector-tag">E-Mail</span>: <span class="selector-tag">mailto</span><span class="selector-pseudo">:geother</span>@<span class="keyword">foxmail</span>.<span class="keyword">com</span> || envelope</span><br><span class="line">  LuoGu: https://www.luogu.org/space/show?uid=<span class="number">141933</span></span><br><span class="line">  Bilibili: https://space.bilibili.com/<span class="number">168663177</span></span><br></pre></td></tr></table></figure>
-<p>愉快的写下这段代码之后，出现了困扰我半个小时的画面</p>
-<p><img src="https://s2.ax1x.com/2019/07/09/Z6Y0de.md.png" alt></p>
-<p>直到我发现我忘了去掉<code>#social</code>的注释…….</p>
-<p>类似的坑还有配置文件的“：”后面往往要加一个空格；</p>
-<h2 id="Part-2"><a href="#Part-2" class="headerlink" title="Part.2"></a>Part.2</h2><p>于是我就顺势更新了。顺便去那些大佬的博客学习♂学习。</p>
-<p>首先就去试图弄了一个看板娘，但是能npm到的插件并不是我想象中的看板娘，而那些神仙做的Live-3D有涉及到api。我想做到，可是<del>实力不允许</del>，于是我放弃了看板娘。</p>
-<p>Next装好后，我首先把网站目录下的语言改为<code>language: zh-Hans</code>;于是博客看起来就比较亲民了。未来还打算多开几个子页，例如 标签、About 什么的。</p>
-<div class="note primary"><p>更新：原来还挺简单的，就像新建文章一样。</p></div>
-<p>经过深思熟虑后，将网站配色设计成这样。用取色器从背景取了个老蓝色。</p>
-<p>样式我是自定义的，为此特意去看了看CSS（好复杂啊）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(https://s2.ax1x.com/2019/07/09/Z6M0OJ.jpg);</span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main-inner</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  opacity: 1.0;  //23333  0.9貌似看起来比较强</span><br><span class="line">                  //好吧我又给改成1.0了，还是1.0好看。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Part-3"><a href="#Part-3" class="headerlink" title="Part.3"></a>Part.3</h2><p>这部分最耗时间。</p>
-<p>可以看出，在原始博客上的“文章目录”类的链接有一条下划线，让我浑身难受。于是我发现这是一条由CSS控制的规则，我<code>F12</code>后发现了与之联系的所谓“main.css”。这就是噩梦的开始。我开始在本地的CSS目录寻找这个文件，（当然没找到），后来我好想有了一些想法，我猜测这个文件可能是由当前的网页渲染出的，于是我在所有的sidebar的CSS中寻找<code>border-bottom:</code>，其实理论上能找到，但是我失败了。</p>
-<p><img src="https://s2.ax1x.com/2019/07/09/Z6NaUe.jpg" alt></p>
-<p>最后我只得硬着头皮在Custom styles中写下了</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#555</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;    </span><br><span class="line">    <span class="attribute">word-wrap</span>: break-word;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在本地服务器上跑了一下，发现Custom styles是真的强。</p>
-<h2 id="Part-4"><a href="#Part-4" class="headerlink" title="Part.4"></a>Part.4</h2><p>想了一想，还是把进度条去掉了，因为进度条的颜色有点违和而我懒得改了…..</p>
-<p>Update.进度条又被我加上了，因为不知道加载到哪里就好像进入了知识的荒原，本来网页加载就慢。</p>
-<p>最后加上版权声明（那个版权声明的红色引用框太好看了，协议用了看起来<del>比较NB</del>的这个）</p>
-<blockquote>
-<p>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</p>
+<h2 id="单调栈、单调队列、并查集"><a href="#单调栈、单调队列、并查集" class="headerlink" title="单调栈、单调队列、并查集"></a><i class="fa fa-bolt" aria-hidden="true"></i>单调栈、单调队列、并查集</h2><p>这三个被学长称为初级数据结构，冰茶姬去年在长春学会了。然而单调栈虽然很好写，但是一直不知道单调栈的特性适用于什么类型的问题。单调队列也是一样 ，<del>之前我一直以为单调队列和优先队列是一个东西</del>。</p>
+<p>本来写了一篇博客总结这些的，但是集训时从机房的电脑发邮箱时发出锅了。机房U口是假的差评。</p>
+<h2 id="欧拉函数、欧拉定理、费马小定理、中国剩余定理"><a href="#欧拉函数、欧拉定理、费马小定理、中国剩余定理" class="headerlink" title="欧拉函数、欧拉定理、费马小定理、中国剩余定理"></a><i class="fa fa-bolt" aria-hidden="true"></i>欧拉函数、欧拉定理、费马小定理、中国剩余定理</h2><p>听课时感觉难度梯度有点大，对我这样的文科生十分不友好。但是实现的方法还是可以听懂的。回头管数竞大佬借本数论书再抢救一下。</p>
+<div class="note warning"><p>Update：貌似现在只记得欧拉函数怎么办了…</p></div>
+<p><a href="https://geother.github.io/2019/07/27/入门数论/">传送门—欧拉函数</a></p>
+<h2 id="组合数、ex-gcd、逆元"><a href="#组合数、ex-gcd、逆元" class="headerlink" title="组合数、ex_gcd、逆元"></a><i class="fa fa-bolt" aria-hidden="true"></i>组合数、ex_gcd、逆元</h2><p>组合数的递推公式和性质之类的<del>高中生</del>老年人都会。</p>
+<p>拓展欧几里得不知道怎么证明（数论直接劝退），虽然用起来十分方便，但是每次用都得背模板且容错度为0，还是要回头管数竞大佬借本数论书再再抢救一下。</p>
+<p>逆元到底有什么用我至今也不知道，所有人讲课包括网上的博客都是列个定义然后就直接讲实现之类的…（<del>不排除我睡着的可能性</del>）。心态有点小崩。</p>
+<h2 id="大模拟、分治、贪心"><a href="#大模拟、分治、贪心" class="headerlink" title="大模拟、分治、贪心"></a><i class="fa fa-bolt" aria-hidden="true"></i>大模拟、分治、贪心</h2><p>真心佩服讲课的学长，居然真的讲完了猪国杀Orz。</p>
+<p>分治和贪心没什么好说的。</p>
+<h2 id="lca-倍增"><a href="#lca-倍增" class="headerlink" title="lca,倍增"></a><i class="fa fa-bolt" aria-hidden="true"></i>lca,倍增</h2><p>听完之后才感觉原来倍增求LCA这么简单，学长还提了两嘴LCA别的求法，例如将其转化为RMQ问题、tarjan水灌树等花里胡哨的算法，后面这些我仅限于听懂…</p>
+<p>考试时还是倍增舒服。</p>
+<p><a href="https://geother.github.io/2019/08/04/LCA与强连通分量/">传送门-LCA</a></p>
+<h2 id="强连通、边双、点双"><a href="#强连通、边双、点双" class="headerlink" title="强连通、边双、点双"></a><i class="fa fa-bolt" aria-hidden="true"></i>强连通、边双、点双</h2><p>强连通很友好，一听就懂。</p>
+<p>变双和和点双从概念开始就开始小迷，后来就爆炸迷了。</p>
+<blockquote class="blockquote-center"><p>懵逼树下懵逼果</p>
 </blockquote>
-<p>于是就有了现在我看来比较好看的网站啦。</p>
+<p><a href="https://geother.github.io/2019/08/04/LCA与强连通分量/">传送门-强连通(和LCA写在一起了)</a></p>
+<h2 id="二分答案"><a href="#二分答案" class="headerlink" title="二分答案"></a><i class="fa fa-bolt" aria-hidden="true"></i>二分答案</h2><p>好像挺简单？</p>
+<h2 id="状压"><a href="#状压" class="headerlink" title="状压"></a><i class="fa fa-bolt" aria-hidden="true"></i>状压</h2><p>虽然之前学过，但是忘差不多了，这回yyc给我上了生动的一课，被巨佬吊锤。</p>
+<p>感觉难度不在状态的处理上，最难的还是DP的部分。在考场上终于不用SA水这种数据范围极小的题了。</p>
+<p>状压的总结博客先挖个坑吧，现在做的题还不够多。</p>
+<h2 id="树型"><a href="#树型" class="headerlink" title="树型"></a><i class="fa fa-bolt" aria-hidden="true"></i>树型</h2><p>与状压同理，难度完全在DP的转移方式上。</p>
+<p>树型的总结博客先挖个坑吧，现在做的题还不够多。</p>
+<h2 id="热点问题选讲"><a href="#热点问题选讲" class="headerlink" title="热点问题选讲"></a><i class="fa fa-bolt" aria-hidden="true"></i>热点问题选讲</h2><p>我在宿舍体会  <strong>热</strong>  点问题十分深刻。温度高达39.5℃。</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a><i class="fa fa-bolt" aria-hidden="true"></i>Summary</h2><p>这次集训少说也算拿下了80%吧，毕竟是在B层。</p>
+<p>NOIP  ++RP;</p>
 
       
     </div>
@@ -371,7 +381,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://geother.github.io/2019/07/09/魔改/" title="Next魔改传">https://geother.github.io/2019/07/09/魔改/</a>
+    <a href="https://geother.github.io/2019/08/05/佳木斯综合/" title="佳木斯集训总结祭">https://geother.github.io/2019/08/05/佳木斯综合/</a>
   </li>
 <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -386,7 +396,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/不务正业/" rel="tag"><i class="fa fa-tag"></i> 不务正业</a>
+            <a href="/tags/OI-游记/" rel="tag"><i class="fa fa-tag"></i> OI-游记</a>
           
         </div>
       
@@ -399,15 +409,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/04/LCA与强连通分量/" rel="next" title="佳木斯-LCA && 强连通分量">
+                <i class="fa fa-chevron-left"></i> 佳木斯-LCA && 强连通分量
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/13/NOI考试环境入门/" rel="prev" title="NOI考试环境入门">
-                NOI考试环境入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -578,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1"><span class="nav-number">1.</span> <span class="nav-text">Part.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-2"><span class="nav-number">2.</span> <span class="nav-text">Part.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-3"><span class="nav-number">3.</span> <span class="nav-text">Part.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-4"><span class="nav-number">4.</span> <span class="nav-text">Part.4</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单调栈、单调队列、并查集"><span class="nav-number">1.</span> <span class="nav-text">单调栈、单调队列、并查集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧拉函数、欧拉定理、费马小定理、中国剩余定理"><span class="nav-number">2.</span> <span class="nav-text">欧拉函数、欧拉定理、费马小定理、中国剩余定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合数、ex-gcd、逆元"><span class="nav-number">3.</span> <span class="nav-text">组合数、ex_gcd、逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大模拟、分治、贪心"><span class="nav-number">4.</span> <span class="nav-text">大模拟、分治、贪心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lca-倍增"><span class="nav-number">5.</span> <span class="nav-text">lca,倍增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强连通、边双、点双"><span class="nav-number">6.</span> <span class="nav-text">强连通、边双、点双</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分答案"><span class="nav-number">7.</span> <span class="nav-text">二分答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状压"><span class="nav-number">8.</span> <span class="nav-text">状压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树型"><span class="nav-number">9.</span> <span class="nav-text">树型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热点问题选讲"><span class="nav-number">10.</span> <span class="nav-text">热点问题选讲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">11.</span> <span class="nav-text">Summary</span></a></li></ol></div>
             
 
           </div>
