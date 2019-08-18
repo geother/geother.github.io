@@ -331,7 +331,7 @@
 <p>用<code>anc[i][j]</code>表示i节点的第<code>2^j</code>级节点。</p>
 <p>例如这样一棵树（根为节点1）</p>
 <blockquote>
-<p>1 –&gt; 2 –&gt; 3 –&gt; 4 –&gt; 5 –&gt; 6 –&gt; 7 –&gt; 8</p>
+<p>1 —&gt; 2 —&gt; 3 —&gt; 4 —&gt; 5 —&gt; 6 —&gt; 7 —&gt; 8</p>
 </blockquote>
 <p>则有：</p>
 <blockquote>
@@ -787,6 +787,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
