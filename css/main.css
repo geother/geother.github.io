@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffebff;
+  background: #618aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3022,7 +3022,7 @@ a {
   word-wrap: break-word;
 }
 body {
-  background: url("https://s2.ax1x.com/2019/07/09/Z6M0OJ.jpg");
+  background: url("https://w.wallhaven.cc/full/83/wallhaven-8393gy.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -3030,5 +3030,8 @@ body {
 }
 .main-inner {
   background: #fff;
-  opacity: 1;
+  opacity: 0.9;
+}
+.header-inner {
+  opacity: 0.9;
 }
