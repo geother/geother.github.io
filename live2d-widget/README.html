@@ -1,112 +1,188 @@
-<h1 id="live2d-widget">Live2D Widget</h1>
-<p><img src="https://forthebadge.com/images/badges/built-with-love.svg" /> <img src="https://forthebadge.com/images/badges/uses-html.svg" /> <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" /> <img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg" /> <img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" /> <img src="https://forthebadge.com/images/badges/makes-people-smile.svg" /></p>
-<h2 id="特性-feature">特性 Feature</h2>
-<p>在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。<br />
-Add Live2D widget to web page. Compatible with PJAX.</p>
-<p><strong>警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。</strong><br />
-<strong>WARNING: This project does not support legacy browsers such as IE 11.</strong></p>
-<h2 id="示例-demo">示例 Demo</h2>
-<p>在<a href="https://zhangshuqiao.org">米米的博客</a>的左下角可查看效果。（注：以下人物模型仅供展示之用，本仓库并不包含任何模型。）</p>
-<p><img src="assets/screenshot-2.png" width="280"><img src="assets/screenshot-3.png" width="280"><img src="assets/screenshot-1.png" width="270"></p>
-<p>你也可以在允许的范围内进行二次开发，这里有一些示例</p>
+<h1 id="live2d-demo">Live2D demo</h1>
+<p>Live2D 看板娘插件的前端 HTML 源码</p>
+<h3 id="特性">特性</h3>
 <ul>
-<li><a href="https://mi.js.org/live2d-widget/demo/demo.html">demo.html</a> ，展现基础效果</li>
-<li><a href="https://mi.js.org/live2d-widget/demo/login.html">login.html</a> ，仿 NPM 的登陆界面</li>
+<li>基于 API 加载模型，支持 定制 提示语</li>
+<li>增加 参数设置 一键定制看板娘，易用性++</li>
+<li>增加 看板娘样式设置，可直接设置宽高度等</li>
+<li>支持多种一言接口，基于 JQuery UI 实现拖拽</li>
 </ul>
-<h2 id="依赖-dependencies">依赖 Dependencies</h2>
-<p>本插件需要 Font Awesome (v4 或 v5) 图标支持，请确保相关样式表已在页面中加载。以 Font Awesome v4 为例，请在 <code>&lt;head&gt;</code> 中加入：<br />
-Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an example, please add the following in <code>&lt;head&gt;</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
-<p>否则图标将无法正常显示。（如果网页中已经加载了任何版本的 Font Awesome，就不要重复加载了）</p>
-<h2 id="使用-usage">使用 Usage</h2>
-<p>将这一行代码加入 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code>，即可展现出效果：</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<p>如果网站启用了 PJAX，由于看板娘不必每页刷新，因此要注意将相关脚本放到 PJAX 刷新区域之外。</p>
-<p>换句话说，如果你是小白，或者只需要最基础的功能，就只用把这一行代码，连同前面加载 Font Awesome 的一行代码，一起放到 html 的 <code>&lt;head&gt;</code> 中即可。<br />
-对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 <a href="https://hexo.io">Hexo</a> 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
-<p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br />
-如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
-<h3 id="using-cdn">Using CDN</h3>
-<p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<p>将此处的 <code>username</code> 替换为你的 GitHub 用户名。为了使 CDN 的内容正常刷新，需要创建新的 git tag 并推送至 GitHub 仓库中，否则此处的 <code>@latest</code> 仍然指向更新前的文件。此外 CDN 本身存在缓存，因此改动可能需要一定的时间生效。相关文档： - <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git Basics - Tagging</a> - <a href="https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository">Managing releases in a repository</a></p>
-<h3 id="self-host">Self-host</h3>
-<p>你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。</p>
+<h2 id="使用">使用</h2>
+<h3 id="目录结构">目录结构</h3>
+<pre class="shell"><code>│  autoload.js                     // 自动异步加载
+│  live2d.js                       // Live2D 核心
+│  waifu-tips.js                   // Live2D 看板娘 扩展
+│  waifu-tips.json                 // Live2D 看板娘 提示语
+│  waifu.css                       // Live2D 看板娘 样式表
+└─fonts
+        flat-ui-icons-regular.eot       // Flat UI 字体
+        flat-ui-icons-regular.svg       // Flat UI 字体
+        flat-ui-icons-regular.ttf       // Flat UI 字体
+        flat-ui-icons-regular.woff      // Flat UI 字体
+        
+        
+        
+        </code></pre>
+<h3 id="食用方法">食用方法</h3>
 <ul>
-<li><p>如果你能够通过 <code>ssh</code> 访问你的主机，请把整个仓库克隆到服务器上。执行：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /path/to/your/webroot</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone this repository</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/stevenjoezhang/live2d-widget.git</span></code></pre></div></li>
-<li><p>如果你的主机无法用 <code>ssh</code> 连接（例如一般的虚拟主机），请选择 <code>Download ZIP</code>，然后通过 <code>ftp</code> 等方式上传到主机上，再解压到网站的目录下。</p></li>
-<li><p>如果你是通过 Hexo 等工具部署的静态博客，请在博客源文件（即 <code>source</code>）目录下，执行前述的 <code>git clone</code> 命令。重新部署博客时，相关文件就会自动上传到对应的路径下。为了避免这些文件被 Hexo 插件错误地修改，可能需要设置 <code>skip_render</code>。</p></li>
-</ul>
-<p>这样，整个项目就可以通过你的服务器 IP 或者域名从公网访问了。不妨试试能否正常地通过浏览器打开 <code>autoload.js</code> 和 <code>live2d.min.js</code> 等文件，并确认这些文件的内容是完整和正确的。<br />
-一切正常的话，接下来修改一些配置就行了。（需要通过服务器上的文本编辑器修改；你也可以先在本地完成这一步骤，再上传到服务器上）<br />
-修改 <code>autoload.js</code> 中的常量 <code>live2d_path</code> 为 <code>live2d-widget</code> 这一目录的 URL。比如说，如果你能够通过</p>
-<pre><code>https://example.com/path/to/live2d-widget/live2d.min.js</code></pre>
-<p>访问到 <code>live2d.min.js</code>，那么就把 <code>live2d_path</code> 的值修改为</p>
-<pre><code>https://example.com/path/to/live2d-widget/</code></pre>
-<p>路径末尾的 <code>/</code> 一定要加上。具体可以参考 <code>autoload.js</code> 内的注释。<br />
-完成后，在你要添加看板娘的界面加入</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://example.com/path/to/live2d-widget/autoload.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<p>就可以加载了。</p>
-<h2 id="后端-api">后端 API</h2>
-<p><code>initWidget</code> 方法接受名为 <code>apiPath</code> 和 <code>cdnPath</code> 的参数，两者设置其中一项即可。其中 <code>apiPath</code> 为后端 API 的 URL，可以自行搭建，并增加模型（需要修改的内容比较多，此处不再赘述）。而 <code>cdnPath</code> 则是通过 jsDelivr 这样的 CDN 服务加载资源，更加稳定。</p>
-<h2 id="目录结构-files">目录结构 Files</h2>
+<li><p>依赖类库</p>
 <ul>
-<li><code>waifu-tips.js</code> 包含了按钮和对话框的逻辑；</li>
-<li><code>waifu-tips.json</code> 中定义了触发条件（<code>selector</code>，CSS 选择器）和触发时显示的文字（<code>text</code>）；</li>
-<li><code>waifu.css</code> 是看板娘的样式表。</li>
+<li>JQuery (<code>waifu-tips.js</code>)</li>
+<li>JQuery UI (仅实现 <em>拖拽效果</em> 需要)</li>
+</ul></li>
+<li><p>常规方式引入</p>
+<ol type="1">
+<li>在 <code>&lt;/head&gt;</code> 前引入 <code>waifu.css</code> 样式表</li>
+<li>在 <code>&lt;/body&gt;</code> 前引入 <code>waifu-tips.js</code> 和 <code>live2d.js</code></li>
+<li>在 <code>&lt;/body&gt;</code> 前插入 初始化 JS，可在 初始化前 设置参数</li>
+</ol></li>
 </ul>
-<p>源文件是对 Hexo 的 <a href="http://github.com/next-theme/hexo-theme-next">NexT 主题</a>有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br />
-<strong>警告：作者不对包括但不限于 <code>waifu-tips.js</code> 和 <code>waifu-tips.json</code> 文件中的内容负责，请自行确保它们是合适的。</strong></p>
-<p>如果有任何疑问，欢迎提 Issue。如果有任何修改建议，欢迎提 Pull Request。</p>
-<h2 id="鸣谢-thanks">鸣谢 Thanks</h2>
-<p><a href="https://www.browserstack.com/"><img height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack Logo"></a></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        · · ·   · · ·</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://www.example.com/path/to/waifu.css&quot;</span><span class="kw">/&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        · · ·   · · ·</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;waifu&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;waifu-tips&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;canvas</span><span class="ot"> id=</span><span class="st">&quot;live2d&quot;</span><span class="ot"> class=</span><span class="st">&quot;live2d&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;waifu-tool&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-home&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-chat&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-eye&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-user&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-photo&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-info-circle&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fui-cross&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;path/to/waifu-tips.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;path/to/live2d.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        live2d_settings[<span class="st">&#39;modelId&#39;</span>] <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        live2d_settings[<span class="st">&#39;modelTexturesId&#39;</span>] <span class="op">=</span> <span class="dv">87</span><span class="op">;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">initModel</span>(<span class="st">&quot;https://www.example.com/path/to/waifu-tips.json&quot;</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>autoload.js 引入
+<ol type="1">
+<li>在 <code>&lt;/body&gt;</code> 前引入 <code>autoload.js</code></li>
+<li>修改 <code>autoload.js</code> 文件路径，可在 初始化前 设置参数</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    · · ·   · · ·</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;path/to/autoload.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    · · ·   · · ·</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    live2d_settings[<span class="st">&#39;modelId&#39;</span>] <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    live2d_settings[<span class="st">&#39;modelTexturesId&#39;</span>] <span class="op">=</span> <span class="dv">87</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">initModel</span>(<span class="st">&#39;https://www.example.com/path/to/waifu-tips.json&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">catch</span>(err) { <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;[Error] JQuery is not defined.&#39;</span>) }</span></code></pre></div>
+<ul>
+<li>定制属于你的看板娘
+<ul>
+<li>修改 <code>waifu-tips.js</code> 顶部的设置参数 (或初始化前设置</li>
+<li>修改 <code>waifu-tips.json</code>，定制看板娘提示语，打造专属看板娘</li>
+</ul></li>
+</ul>
+<h3 id="设置参数">设置参数</h3>
+<p><em>Tips： <code>waifu-tips.js</code> 已自带默认参数，如无特殊要求可跳过</em></p>
+<ul>
+<li><p>后端接口</p>
+<ul>
+<li><p><code>live2d_settings['modelAPI']</code><br>看板娘 API 地址，默认值 <code>'//live2d.fghrsh.net/api/'</code></p></li>
+<li><p><code>live2d_settings['tipsMessage']</code><br>提示语读取路径，默认值 <code>'waifu-tips.json'</code> (一般在 <code>initModel</code> 时指定)</p></li>
+<li><p><code>live2d_settings['hitokotoAPI']</code><br>一言 API 接口，可选 <code>'lwl12.com'</code>，<code>'hitokoto.cn'</code>，<code>'jinrishici.com'</code> (古诗词)</p></li>
+</ul></li>
+<li><p>默认模型</p>
+<ul>
+<li><p><code>live2d_settings['modelId']</code><br>默认模型(分组) ID，可在 Demo 页 <code>[F12]</code> 呼出 <code>控制台(Console)</code> 找到</p></li>
+<li><p><code>live2d_settings['modelTexturesId']</code><br>默认材质(模型) ID，可在 Demo 页 <code>[F12]</code> 呼出 <code>控制台(Console)</code> 找到</p></li>
+</ul></li>
+<li><p>工具栏设置</p>
+<ul>
+<li><code>live2d_settings['showToolMenu']</code>， 显示工具栏， <code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canCloseLive2d']</code>， 关闭看板娘 按钮，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canSwitchModel']</code>， 切换模型 按钮， <code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canSwitchTextures']</code>， 切换材质 按钮， <code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canSwitchHitokoto']</code>， 切换一言 按钮， <code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canTakeScreenshot']</code>， 看板娘截图 按钮，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canTurnToHomePage']</code>， 返回首页 按钮， <code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['canTurnToAboutPage']</code>，跳转关于页 按钮，<code>true</code> | <code>false</code></li>
+</ul></li>
+<li><p>模型切换模式</p>
+<ul>
+<li><code>live2d_settings['modelStorage']</code>，记录 ID (刷新后恢复)，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['modelRandMode']</code>，模型切换，可选 <code>'rand'</code> (随机) | <code>'switch'</code> (顺序)</li>
+<li><code>live2d_settings['modelTexturesRandMode']</code>，材质切换，可选 <code>'rand'</code> | <code>'switch'</code></li>
+</ul></li>
+<li><p>提示消息选项</p>
+<ul>
+<li><code>live2d_settings['showHitokoto']</code>，空闲时一言，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['showF12Status']</code>，控制台显示加载状态，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['showF12Message']</code>，提示消息输出到控制台，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['showF12OpenMsg']</code>，控制台被打开触发提醒，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['showCopyMessage']</code>，内容被复制触发提醒，<code>true</code> | <code>false</code></li>
+<li><code>live2d_settings['showWelcomeMessage']</code>，进入面页时显示欢迎语，<code>true</code> | <code>false</code></li>
+</ul></li>
+<li><p>看板娘样式设置</p>
+<ul>
+<li><p><code>live2d_settings['waifuSize']</code>，看板娘大小，例如 <code>'280x250'</code>，<code>'600x535'</code></p></li>
+<li><p><code>live2d_settings['waifuTipsSize']</code>，提示框大小，例如 <code>'250x70'</code>，<code>'570x150'</code></p></li>
+<li><p><code>live2d_settings['waifuFontSize']</code>，提示框字体，例如 <code>'12px'</code>，<code>'30px'</code></p></li>
+<li><p><code>live2d_settings['waifuToolFont']</code>，工具栏字体，例如 <code>'14px'</code>，<code>'36px'</code></p></li>
+<li><p><code>live2d_settings['waifuToolLine']</code>，工具栏行高，例如 <code>'20px'</code>，<code>'36px'</code></p></li>
+<li><p><code>live2d_settings['waifuToolTop']</code>，工具栏顶部边距，例如 <code>'0px'</code>，<code>'-60px'</code></p></li>
+<li><p><code>live2d_settings['waifuMinWidth']</code><br>面页小于 指定宽度 隐藏看板娘，例如 <code>'disable'</code> (停用)，<code>'768px'</code></p></li>
+<li><p><code>live2d_settings['waifuEdgeSide']</code><br>看板娘贴边方向，例如 <code>'left:0'</code> (靠左 0px)，<code>'right:30'</code> (靠右 30px)</p></li>
+<li><p><code>live2d_settings['waifuDraggable']</code><br>拖拽样式，可选 <code>'disable'</code> (禁用)，<code>'axis-x'</code> (只能水平拖拽)，<code>'unlimited'</code> (自由拖拽)</p></li>
+<li><p><code>live2d_settings['waifuDraggableRevert']</code>，松开鼠标还原拖拽位置，<code>true</code> | <code>false</code></p></li>
+</ul></li>
+<li><p>其他杂项设置</p>
+<ul>
+<li><code>live2d_settings['l2dVersion']</code>，当前版本 (无需修改)</li>
+<li><code>live2d_settings['l2dVerDate']</code>，更新日期 (无需修改)</li>
+<li><code>live2d_settings['homePageUrl']</code>，首页地址，可选 <code>'auto'</code> (自动)，<code>'{URL 网址}'</code></li>
+<li><code>live2d_settings['aboutPageUrl']</code>，关于页地址，<code>'{URL 网址}'</code></li>
+<li><code>live2d_settings['screenshotCaptureName']</code>，看板娘截图文件名，例如 <code>'live2d.png'</code></li>
+</ul></li>
+</ul>
+<h3 id="定制提示语">定制提示语</h3>
+<p><em>Tips： <code>waifu-tips.json</code> 已自带默认提示语，如无特殊要求可跳过</em></p>
+<ul>
+<li><code>"waifu"</code> 系统提示
+<ul>
+<li><code>"console_open_msg"</code> 控制台被打开提醒（支持多句随机）</li>
+<li><code>"copy_message"</code> 内容被复制触发提醒（支持多句随机）</li>
+<li><code>"screenshot_message"</code> 看板娘截图提示语（支持多句随机）</li>
+<li><code>"hidden_message"</code> 看板娘隐藏提示语（支持多句随机）</li>
+<li><code>"load_rand_textures"</code> 随机材质提示语（暂不支持多句）</li>
+<li><code>"hour_tips"</code> 时间段欢迎语（支持多句随机）</li>
+<li><code>"referrer_message"</code> 请求来源欢迎语（不支持多句）</li>
+<li><code>"referrer_hostname"</code> 请求来源自定义名称（根据 host，支持多句随机）</li>
+<li><code>"model_message"</code> 模型切换欢迎语（根据模型 ID，支持多句随机）</li>
+<li><code>"hitokoto_api_message"</code>，一言 API 输出模板（不支持多句随机）</li>
+</ul></li>
+<li><code>"mouseover"</code> 鼠标触发提示（根据 CSS 选择器，支持多句随机）</li>
+<li><code>"click"</code> 鼠标点击触发提示（根据 CSS 选择器，支持多句随机）</li>
+<li><code>"seasons"</code> 节日提示（日期段，支持多句随机）</li>
+</ul>
+<h2 id="版权声明">版权声明</h2>
 <blockquote>
-<p>感谢 BrowserStack 容许我们在真实的浏览器中测试此项目。<br />
-Thanks to <a href="https://www.browserstack.com/">BrowserStack</a> for providing the infrastructure that allows us to test in real browsers!</p>
+<p>( ˃ ˄ ˂̥̥ ) 都看到这了，点个 Star 吧 ~</p>
 </blockquote>
-<p><a href="https://www.jsdelivr.com"><img height="80" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg"></a></p>
-<blockquote>
-<p>感谢 jsDelivr 提供的 CDN 服务。<br />
-Thanks jsDelivr for providing public CDN service.</p>
-</blockquote>
-<p>代码自这篇博文魔改而来：<br />
-https://www.fghrsh.net/post/123.html</p>
-<p>点击看板娘的纸飞机按钮时，会出现一个彩蛋，这来自于 <a href="http://www.websiteasteroids.com">WebsiteAsteroids</a>。</p>
-<h2 id="更多-more">更多 More</h2>
-<p>更多内容可以参考：<br />
-https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02<br />
-https://github.com/xiazeyu/live2d-widget.js<br />
-https://github.com/summerscar/live2dDemo</p>
-<p>关于后端 API 模型：<br />
-https://github.com/fghrsh/live2d_api<br />
-https://github.com/xiazeyu/live2d-widget-models<br />
-https://github.com/xiaoski/live2d_models_collection</p>
-<p>除此之外，还有桌面版本：<br />
-https://github.com/amorist/platelet<br />
-https://github.com/akiroz/Live2D-Widget<br />
-https://github.com/zenghongtu/PPet<br />
-https://github.com/LikeNeko/L2dPetForMac</p>
-<p>以及 Wallpaper Engine：<br />
-https://github.com/guansss/nep-live2d</p>
-<h2 id="许可证-license">许可证 License</h2>
-<p>Released under the GNU General Public License v3<br />
-http://www.gnu.org/licenses/gpl-3.0.html</p>
-<p>本仓库并不包含任何模型，用作展示的所有 Live2D 模型、图片、动作数据等版权均属于其原作者，仅供研究学习，不得用于商业用途。</p>
-<p>Live2D 官方网站：<br />
-https://www.live2d.com/en/<br />
-https://live2d.github.io</p>
-<p>Live2D Cubism Core は Live2D Proprietary Software License で提供しています。<br />
-https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html<br />
-Live2D Cubism Components は Live2D Open Software License で提供しています。<br />
-http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html</p>
-<blockquote>
-<p>The terms and conditions do prohibit modification, but obfuscating in <code>live2d.min.js</code> would not be considered illegal modification.</p>
-</blockquote>
-<p>https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question</p>
-<h2 id="更新-update">更新 Update</h2>
-<p>2018年10月31日，由 fghrsh 提供的原 API 停用，请更新至新地址。参考文章：<br />
-https://www.fghrsh.net/post/170.html</p>
-<p>2020年1月1日起，本项目不再依赖于 jQuery。</p>
+<p><a href="https://designmodo.com/flat-free/" title="Flat UI Free">Flat UI Free</a><br />
+<a href="https://github.com/journey-ad/live2d_src" title="基于 #fea64e4 的修改版">live2d_src / ©journey-ad / GPL v2.0</a><br />
+<a href="https://imjad.cn/" title="猫与向日葵">waifu-tips.js / ©journey-ad / CC BY-NC-SA 4.0</a></p>
+<p>Open sourced under the GPL v2.0 license.</p>
